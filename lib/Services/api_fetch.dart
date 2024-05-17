@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'package:rest_api_assignment_ostad/Models/photo_model.dart';
 import 'package:rest_api_assignment_ostad/Utils/constants.dart';
 
 class ApiFetch {
@@ -11,7 +10,6 @@ class ApiFetch {
         .get(Uri.parse(apiUrl));
     if (response.statusCode == 200) {
       jsonData = jsonDecode(response.body);
-
     } else {
       throw response.statusCode;
     }

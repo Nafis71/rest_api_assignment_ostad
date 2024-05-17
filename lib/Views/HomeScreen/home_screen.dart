@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rest_api_assignment_ostad/Services/api_fetch.dart';
 import 'package:rest_api_assignment_ostad/Views/HomeScreen/home_screen_list_layout.dart';
 
-import '../../Controller/data_controller.dart';
+import '../../Controllers/data_controller.dart';
 import '../../Models/photo_model.dart';
 import '../../Utils/constants.dart';
 

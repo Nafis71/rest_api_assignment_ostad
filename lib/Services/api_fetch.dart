@@ -5,18 +5,16 @@ import 'package:rest_api_assignment_ostad/Models/photo_model.dart';
 import 'package:rest_api_assignment_ostad/Utils/constants.dart';
 
 class ApiFetch {
-  Future<List<PhotoModel>> fetchPhotos() async {
-    List<PhotoModel> photoModelList = [];
+  Future<List<dynamic>> fetchPhotos() async {
+    List<dynamic> jsonData = [];
     final Response response = await http
         .get(Uri.parse(apiUrl));
     if (response.statusCode == 200) {
-      final List<dynamic> data = jsonDecode(response.body);
-      for (Map<String, dynamic> json in data) {
-        photoModelList.add(PhotoModel.fromJson(json));
-      }
+      jsonData = jsonDecode(response.body);
+
     } else {
       throw response.statusCode;
     }
-    return photoModelList;
+    return jsonData;
   }
 }

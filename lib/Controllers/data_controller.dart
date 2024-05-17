@@ -7,13 +7,17 @@ class DataController{
   DataController(this.apiFetch);
 
   Future<List<PhotoModel>> loadPhotos() async{
-    List<PhotoModel> photoModel = [];
+    List<PhotoModel>photoModelList =[];
+    List<dynamic> jsonData = [];
     try {
-      photoModel = await apiFetch.fetchPhotos();
+      jsonData = await apiFetch.fetchPhotos();
+      for (Map<String, dynamic> json in jsonData) {
+        photoModelList.add(PhotoModel.fromJson(json));
+      }
     } catch (statusCode) {
       isErrorOccurred = true;
     }
-    return photoModel;
+    return photoModelList;
   }
 
 }

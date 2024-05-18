@@ -5,7 +5,8 @@ import 'package:path_provider/path_provider.dart';
 
 import 'Views/App/app.dart';
 
-
+//please use emulator for evaluation some packages don't support web.
+//I have provided device_preview
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   String storageLocation = (await getApplicationDocumentsDirectory()).path;
